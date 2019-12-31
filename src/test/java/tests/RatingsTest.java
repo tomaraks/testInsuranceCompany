@@ -24,7 +24,7 @@ public class RatingsTest extends BaseTest {
     @Test
     public void login() {
         loginPage.enterEmailPassword(EMAIL, PASSWORD);
-        Assert.assertEquals(loginPage.getProfileName(), EXPECTED_PROFILE_NAME, "Wrong Profile Name!!");
+        Assert.assertEquals(loginPage.getProfileName(), EXPECTED_PROFILE_NAME, "Wrong Profile Name!!!");
 
         getWindowManager().goTo(WALLET_HUB_PROFILE_URL + COMPANY);
         homePage = loginPage.navigateToInsuranceCompany();
@@ -32,7 +32,7 @@ public class RatingsTest extends BaseTest {
         homePage.selectFromDropDown(PRODUCT_TO_SELECT);
         homePage.writeAReview(REVIEW_TO_WRITE);
         homePage.clickSubmit();
-        Assert.assertTrue(homePage.getConfirmationMessage().contains(EXPECTED_SUCCESSFUL_MESSAGE), "Review Is Successfully Posted.");
+        Assert.assertTrue(homePage.getConfirmationMessage().contains(EXPECTED_SUCCESSFUL_MESSAGE), "Wrong Confirmation Message!!!");
 
         getWindowManager().goTo(WALLET_HUB_PROFILE_URL + USERNAME);
         profilePage = homePage.navigateToProfile();
